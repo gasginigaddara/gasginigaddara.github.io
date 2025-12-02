@@ -65,7 +65,7 @@ var swiper = new Swiper('.blogSwiper', {
 // SHOW NAV
 
 let bar = document.querySelector('.bars');
-let menu = document.querySelector('.nav_menu');
+let menu = document.querySelector('.menu');
 
 bar.addEventListener('click', () => {
     menu.classList.toggle('show_nav');

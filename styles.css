@@ -323,9 +323,9 @@ button:hover {
 
 /* SERVICES SECTION */
 
-.services {
+.Services {
     flex-direction: column;
-    background-color: F6F7FB;
+    background-color: #F6F7FB;
 }
 
 .headings {
@@ -427,7 +427,7 @@ button:hover {
 
 .testimonials {
     flex-direction: column;
-    background-color: F6F7FB;
+    background-color: #F6F7FB;
     border-bottom-left-radius: 50% 20%;
     border-bottom-right-radius: 50% 20%;
 }
@@ -583,7 +583,7 @@ button:hover {
     margin-top: 50px;
 }
 
-.blogSwiper.swiper-wrapper {
+.blogSwiper .swiper-wrapper {
     padding: 10px;
 }
 
@@ -676,7 +676,7 @@ input {
     border-radius: 10px;
     color: var(--pere-color);
     transition: var(--transition);
-    &::placeholder {
+    }`r`n`r`ninput::placeholder {
         color: #999;
     }
 }
@@ -709,8 +709,7 @@ textarea:focus {
 
 .address_det {
     width: 100%;
-    display: flex;
-    grid-template-columns: repeat(3,1fr);
+    display: grid;`r`n    grid-template-columns: repeat(3,1fr);
     gap: 20px;
     justify-content: center;
     align-items: center;
@@ -882,7 +881,7 @@ textarea:focus {
     .textarea{
         width: 100%;
     }
-    .category bottom: unset {
+    .category button {
         font-size: 1rem;
     }
     .blogSwiper .swiper-wrapper{
