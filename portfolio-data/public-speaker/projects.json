@@ -160,5 +160,14 @@
         "link": "https://web.facebook.com/photo/?fbid=3842902369268231&set=a.1762046760687146",
         "timestamp": "2022-01-30T00:00:00",
         "image": "img/Projects/public-speaker/Picture18.jpg"
+    },
+    {
+        "id": 19,
+        "category": "public-speaker",
+        "title": "Moderator in panel discusiion by Zep Research",
+        "description": "Moderated the technical session and led the panel discussion on “Building Sustainable Smart Cities: Innovation, Policy, and Community Resilience” at the International Conference on Sustainability, Innovation and Future Technologies, organized by Zep Research, Bangkok.",
+        "link": "https://www.linkedin.com/posts/gasginigaddara_gasginigaddara-thailand-zepresearch-activity-7413227660132311040-c-bs?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAkdnpIBAcHSIKTfWXrMj4TjflwbdL7YPfQ",
+        "timestamp": "2025-12-27T09:00:00",
+        "image": "img/Projects/public-speaker/Picture19.jpg"
     }
 ]

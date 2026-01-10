@@ -169,10 +169,14 @@ class PortfolioDataLoader {
         const latestClass = project.isLatest ? 'mix-latest' : '';
         const projectImage = this.getProjectImage(project);
 
+        const hasLink = project.link && project.link.trim() !== '' && project.link !== '#';
+        const tag = hasLink ? 'a' : 'div';
+        const linkAttrs = hasLink ? `href="${project.link}" target="_blank" rel="noopener noreferrer"` : 'style="cursor: default;"';
+
         // Removed inline display:none - let MixItUp handle visibility
         return `
             <div class="col-lg-4 col-md-6 mix ${categoryClass} ${latestClass}">
-                <a href="${project.link}" target="_blank" rel="noopener noreferrer" class="portfolio-card-link">
+                <${tag} ${linkAttrs} class="portfolio-card-link">
                     <div class="portfolio_img">
                         <img src="${projectImage}" alt="${project.title}" onerror="this.src='img/hero.jpg'">
                         <div class="portfolio-overlay">
@@ -182,7 +186,7 @@ class PortfolioDataLoader {
                             </div>
                         </div>
                     </div>
-                </a>
+                </${tag}>
             </div>
         `;
     }
@@ -192,9 +196,13 @@ class PortfolioDataLoader {
         const categoryClass = this.getCategoryClass(project.category);
         const projectImage = this.getProjectImage(project);
 
+        const hasLink = project.link && project.link.trim() !== '' && project.link !== '#';
+        const tag = hasLink ? 'a' : 'div';
+        const linkAttrs = hasLink ? `href="${project.link}" target="_blank" rel="noopener noreferrer"` : 'style="cursor: default;"';
+
         return `
             <div class="swiper-slide ${categoryClass}">
-                <a href="${project.link}" target="_blank" rel="noopener noreferrer" class="portfolio-card-link">
+                <${tag} ${linkAttrs} class="portfolio-card-link">
                     <div class="portfolio_img">
                         <img src="${projectImage}" alt="${project.title}" onerror="this.src='img/hero.jpg'">
                         <div class="portfolio-overlay">
@@ -204,7 +212,7 @@ class PortfolioDataLoader {
                             </div>
                         </div>
                     </div>
-                </a>
+                </${tag}>
             </div>
         `;
     }
