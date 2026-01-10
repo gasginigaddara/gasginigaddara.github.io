@@ -37,19 +37,16 @@ class PortfolioDataLoader {
 
     // Get projects for display based on current filter
     getProjectsForDisplay(filter = 'all') {
-        let projects;
-
         if (filter === 'all') {
-            // Get latest project from each category (max 6)
-            projects = this.getLatestFromEachCategory();
+            // Get latest project from each category (no longer limited to 6)
+            return this.getLatestFromEachCategory();
         } else {
             // Get projects from specific category
             const categoryName = this.getCategoryName(filter);
-            projects = this.allProjects.filter(p => p.category === categoryName);
+            const projects = this.allProjects.filter(p => p.category === categoryName);
+            // Return max projects for specific category
+            return projects.slice(0, this.maxCardsToShow);
         }
-
-        // Return max 6 projects
-        return projects.slice(0, this.maxCardsToShow);
     }
 
     // Get all projects for modal view
@@ -68,7 +65,7 @@ class PortfolioDataLoader {
         const categoriesUsed = new Set();
 
         for (const project of this.allProjects) {
-            if (!categoriesUsed.has(project.category) && latestProjects.length < this.maxCardsToShow) {
+            if (!categoriesUsed.has(project.category)) {
                 latestProjects.push(project);
                 categoriesUsed.add(project.category);
             }
