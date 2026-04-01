@@ -234,8 +234,10 @@ class PortfolioDataLoader {
         // Enable looping if we have enough slides
         if (projects.length > 1) {
             swiperInstance.params.loop = true;
-            swiperInstance.loopDestroy();
             swiperInstance.loopCreate();
+        } else {
+            swiperInstance.params.loop = false;
+            swiperInstance.loopDestroy();
         }
 
         swiperInstance.slideTo(0, 0); // Jump to first slide without animation
@@ -330,7 +332,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     portfolioSwiper = new Swiper('.portfolioSwiper', {
         slidesPerView: 1,
         spaceBetween: 20,
-        loop: true, // Enable looping
+        loop: false, // Managed dynamically
         autoplay: {
             delay: 3500,
             disableOnInteraction: false,
@@ -383,10 +385,13 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     // Handle "View All" button click
     const viewAllBtn = document.getElementById('viewAllBtn');
-    const portfolioModal = new bootstrap.Modal(document.getElementById('portfolioModal'));
+    let portfolioModal = null;
 
     if (viewAllBtn) {
         viewAllBtn.addEventListener('click', () => {
+            if (!portfolioModal) {
+                portfolioModal = new bootstrap.Modal(document.getElementById('portfolioModal'));
+            }
             const currentFilter = portfolioLoader.currentFilter;
 
             // Get category name for scroll-to functionality
