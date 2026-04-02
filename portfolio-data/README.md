@@ -103,4 +103,4 @@ Examples:
   }
 ```
 
-3. Save the file and refresh your website
+3. Save the file and refresh your website 
