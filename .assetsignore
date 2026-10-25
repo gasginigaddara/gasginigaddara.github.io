@@ -1,6 +1,10 @@
 # Ignore Git internal files
-.git
+.git/
+.git/*
 .git/**
+**/.git/**
+*.pack
+*.idx
 .github/**
 
 # Ignore editor and wrangler internal files
