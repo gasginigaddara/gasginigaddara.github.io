@@ -444,8 +444,9 @@ button:hover {
     
     /* Apply line clamp to keep card heights uniform */
     display: -webkit-box;
-    -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
     overflow: hidden;
 }
 
